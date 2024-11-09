@@ -1,0 +1,33 @@
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+/* Animated Download Button */
+.download-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background-color: #ffd700;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+
+.download-btn:hover {
+    color: #333;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:hover::before {
+    left: 0;
+}

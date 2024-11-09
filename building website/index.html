@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakih Builders</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Image Hover: Zoom + Rotate Effect */
+        .image-hover-effect {
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .image-hover-effect:hover {
+            transform: scale(1.1) rotate(3deg); /* Zoom and slight rotation */
+        }
+
+        /* Image Scroll Animation: Fade in + Slide Up */
+        .image-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .image-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sticky Navbar */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        /* Underline Animation on Hover */
+        nav ul li a {
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: yellow;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Button Pulse Animation */
+        .button-pulse {
+            animation: pulse 2s infinite;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .button-pulse:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.1); /* Slightly grows when hovered */
+        }
+
+        /* Text Fade In and Slide Up */
+        .text-slide-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .text-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Bounce Animation for "Marketing Team" Heading */
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .bounce-heading {
+            animation: bounceIn 1s ease-in-out;
+        }
+
+        /* Animation for "Choose us" Line */
+        @keyframes wordJoin {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .word-join {
+            animation: wordJoin 1s ease-in-out forwards;
+        }
+
+        /* Animation for Paragraph */
+        @keyframes paragraphFade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .paragraph-fade {
+            animation: paragraphFade 1.5s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-500">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-5 px-28 shadow-lg">
+        <nav class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <img src="logo.jpg" class="w-16 h-16 rounded-full cursor-pointer" alt="Logo">
+                <h1 class="text-3xl font-bold">Fakih Builders</h1>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="flex space-x-8 text-lg">
+                <li><a href="#" class="hover:text-yellow-300">Home</a></li>
+                <li><a href="#" class="hover:text-yellow-300">About</a></li>
+                <li><a href="#" class="hover:text-yellow-300">Features</a></li>
+                <li><a href="#" class="hover:text-yellow-300">Contact</a></li>
+            </ul>
+
+            <!-- Cart and Call to Action -->
+            <div class="flex items-center space-x-6">
+                <img src="cart.png" class="w-8 h-8 cursor-pointer" alt="Cart">
+                <a href="#" class="bg-yellow-300 text-gray-900 font-semibold py-2 px-5 rounded-full button-pulse">Order Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container min-h-screen bg-[url('black.jpeg')] bg-center px-28 py-5 relative">
+        <div class="flex items-center justify-between mt-48">
+            <!-- Text content on the left -->
+            <div class="text-white w-1/2 max-w-lg text-slide-in">
+                <h1 class="text-6xl font-semibold bounce-heading">Marketing Team:</h1>
+                <h2 class="text-orange-400 mt-2 word-join">"Choose us, it's safe and secure hands"</h2>
+
+                <p class="mt-6 text-gray-300 paragraph-fade">
+                    <b>At Fakih Builders, we pride ourselves on delivering exceptional construction solutions with unparalleled expertise. 
+                    With decades of experience in the industry, we specialize in residential, commercial, and industrial building projects, 
+                    offering end-to-end services from conceptual design to final construction. Our team of skilled architects, engineers, 
+                    and project managers is dedicated to delivering quality craftsmanship, innovative design, and timely project completion.</b>
+                </p>
+
+                <div class="mt-10">
+                    
+                    <div class="mt-10">
+                        <a href="#" class="download-btn bg-yellow-300 rounded-3xl py-3 px-8 font-medium inline-block mr-4 button-pulse">Get a Free Consultation</a>
+                        <a href="#" class="download-btn inline-block py-3 px-8 rounded-3xl text-white font-medium border-2 border-yellow-300 transition-all duration-500 ease-in-out">Download App <span class="text-lg inline-block">&#9728;</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Image on the right with hover and scroll animation -->
+            <div class="w-1/2">
+                <img src="umer profile.jpeg" class="object-cover w-full h-full image-hover-effect image-scroll" alt="Profile">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-10 px-28">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <!-- About Section -->
+            <div>
+                <h3 class="text-2xl font-semibold text-white mb-3">Fakih Builders</h3>
+                <p class="text-gray-400 text-sm">
+                    Fakih Builders is dedicated to delivering outstanding construction solutions. With decades of experience, we excel in creating projects that stand the test of time.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-3">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Services</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-3">Contact Us</h3>
+                <ul class="space-y-2">
+                    <li>Email: <a href="mailto:info@fakihbuilders.com" class="hover:underline text-gray-400">info@fakihbuilders.com</a></li>
+                    <li>Phone: <a href="tel:+92-111244622" class="hover:underline text-gray-400">+92-111244622</a></li>
+                    <li>Address: <span class="text-gray-400">402 Umer St, Karachi, Pakistan</span></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-3">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <img src="Facebook Logo.png" alt="Facebook" class="w-6 h-6">
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <img src="twitter logo.png" alt="Twitter" class="w-6 h-6">
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <img src="insta logo.png" alt="Instagram" class="w-6 h-6">
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <img src="linkdin logo.png" alt="LinkedIn" class="w-6 h-6">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 border-t border-gray-700 pt-5 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 Fakih Builders. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /* Sticky Navbar */
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                navbar.style.top = '-80px';  // Hide when scrolling down
+            } else {
+                navbar.style.top = '0';      // Show when scrolling up
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        /* Scroll Animation for Images */
+        document.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.image-scroll');
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            images.forEach(image => {
+                const imagePosition = image.offsetTop;
+
+                if (scrollPosition >= imagePosition) {
+                    image.classList.add('image-visible');
+                }
+            });
+        });
+
+        /* Scroll Animation for Text */
+        window.addEventListener('scroll', () => {
+            const textSections = document.querySelectorAll('.text-slide-in');
+            textSections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight) {
+                    section.classList.add('text-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
